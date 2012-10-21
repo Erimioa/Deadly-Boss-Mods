@@ -35,7 +35,7 @@ mod:AddBoolOption("TrashRespawnTimer", true, "timer")
 -- Elder Ironbranch: 32913
 -- Elder Brightleaf: 32915
 -- Elder Stonebark: 32914
---
+-- Eonas Gift: 33228
 
 function mod:SPELL_CAST_START(args)
 	if args:IsSpellID(62344) then 					-- Fists of Stone
@@ -60,6 +60,6 @@ function mod:UNIT_DIED(args)
 		local guid = tonumber(args.destGUID:sub(9, 12), 16)
 		if guid == 33430 or guid == 33355 or guid == 33354 then		-- guardian lasher / nymph / tree
 			DBM.Bars:CreateBar(7200, L.TrashRespawnTimer)
-		end
+        end
 	end
 end

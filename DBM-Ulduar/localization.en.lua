@@ -200,7 +200,8 @@ L:SetWarningLocalization{
 L:SetTimerLocalization{
 	timerLeftArm		= "Left Arm respawn",
 	timerRightArm		= "Right Arm respawn",
-	achievementDisarmed	= "Timer for Disarm"
+	achievementDisarmed	= "Timer for Disarm",
+    timerEonarsGift     = "Eonar' Gift CD"
 }
 
 L:SetOptionLocalization{
@@ -211,6 +212,7 @@ L:SetOptionLocalization{
 	SetIconOnEyebeamTarget	= DBM_CORE_AUTO_ICONS_OPTION_TEXT:format(63346),
 	PlaySoundOnEyebeam		= "Play sound on $spell:63346",
 	YellOnBeam				= "Yell on $spell:63346",
+    timerEonarsGift         = "Show CD for Eonar' Gift respawn",
 }
 
 L:SetMiscLocalization{
