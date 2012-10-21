@@ -1,5 +1,5 @@
-﻿local mod    = DBM:NewMod("Freya", "DBM-Ulduar")
-local L        = mod:GetLocalizedStrings()
+﻿local mod   = DBM:NewMod("Freya", "DBM-Ulduar")
+local L     = mod:GetLocalizedStrings()
 
 mod:SetRevision(("$Revision: 4133 $"):sub(12, -3))
 
@@ -14,7 +14,8 @@ mod:RegisterEvents(
     "SPELL_AURA_APPLIED",
     "SPELL_AURA_REMOVED",
     "UNIT_DIED",
-    "CHAT_MSG_MONSTER_YELL"
+    "CHAT_MSG_MONSTER_YELL",
+    "SPELL_SUMMON"
 )
 
 -- Trash: 33430 Guardian Lasher (flower)
@@ -153,8 +154,10 @@ function mod:UNIT_DIED(args)
             timerSimulKill:Stop()
         end
     end
-    if self:GetCIDFromGUID(args.destGUID) == 33354 then        -- eonar's gift
-        timerRespawnEonarsGift:Start(40)
-    end
+end
 
+function mod:SPELL_SUMMON(args)
+	if args:IsSpellID(62568) then -- eonar's gift
+        timerRespawnEonarsGift:Start(40)
+	end
 end
